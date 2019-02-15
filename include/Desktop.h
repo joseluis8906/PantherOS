@@ -1,3 +1,4 @@
+#include <iostream>
 #include <string>
 #include <vector>
 #include <memory>
@@ -5,6 +6,7 @@
 #include <cairommconfig.h>
 #include <cairomm/context.h>
 #include <cairomm/surface.h>
+#include <rsvg.h>
 #include "Drawable.h"
 
 

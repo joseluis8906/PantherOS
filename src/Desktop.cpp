@@ -26,6 +26,14 @@ void PantherOS::Desktop::show() {
 	for (auto control: this->controls) {
 		control->draw(this->ctx, this->width, this->height);
 	}
+
+	Rsvg::DimensionData dm;
+	const std::string avatar = "./avatar.svg";
+	Glib::RefPtr<Rsvg::Handle> rsvgHandle = Rsvg::Handle::create_from_file(avatar);
+	rsvgHandle->get_dimensions(dm);
+	this->ctx->translate((this->width / 2.0) - (dm.width / 2.0), (this->height / 2.0) - (dm.height / 2.0));
+	rsvgHandle->render(this->ctx);
+	rsvgHandle->close();
 	
 	this->ctx->show_page();
 }
