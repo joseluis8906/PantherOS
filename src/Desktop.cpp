@@ -1,5 +1,6 @@
 #include "Desktop.h"
 #include "Drawable.h"
+#include "PantherOSConfig.h"
 
 PantherOS::Desktop::Desktop() {
 	this->width = 1024;
@@ -28,7 +29,7 @@ void PantherOS::Desktop::show() {
 	}
 
 	Rsvg::DimensionData dm;
-	const std::string avatar = "./avatar.svg";
+	const std::string avatar = PantherOS_RESOURCES"/avatar.svg";
 	Glib::RefPtr<Rsvg::Handle> rsvgHandle = Rsvg::Handle::create_from_file(avatar);
 	rsvgHandle->get_dimensions(dm);
 	this->ctx->translate((this->width / 2.0) - (dm.width / 2.0), (this->height / 2.0) - (dm.height / 2.0));

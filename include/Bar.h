@@ -1,4 +1,5 @@
 #include "Drawable.h"
+#include <rsvg.h>
 
 #ifndef _PANTHEROS_BAR_
 #define _PANTHEROS_BAR_
